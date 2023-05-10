@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Rigidbody2D rig; 
+    public Rigidbody2D rig;
+    public GameObject tiroperson;
     public float velonave; // Essa variavel diz qual a velocidade da nave
 
     private Vector2 comand; //pega as teclas apertadas 
