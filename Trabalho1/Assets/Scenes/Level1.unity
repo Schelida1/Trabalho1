@@ -3382,7 +3382,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1027005120
 GameObject:
   m_ObjectHideFlags: 0
@@ -3634,6 +3634,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 789974422417116409, guid: 47ed70d6c16dafc4787d7e16ae7b6d37, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2207829968368779450, guid: 47ed70d6c16dafc4787d7e16ae7b6d37, type: 3}
       propertyPath: m_Name
       value: tiroperson
