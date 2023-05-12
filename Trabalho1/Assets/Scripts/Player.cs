@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 
     private void Atirar ()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (doublaser == false)
             {
