@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8399827610092760047}
   - component: {fileID: 789974422417116409}
   - component: {fileID: 6400576525050684694}
+  - component: {fileID: -8767127542799371705}
   m_Layer: 0
   m_Name: tiroperson
   m_TagString: Untagged
@@ -101,3 +102,16 @@ CircleCollider2D:
   m_Offset: {x: 0.0027508736, y: 0}
   serializedVersion: 2
   m_Radius: 0.3377509
+--- !u!114 &-8767127542799371705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2207829968368779450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79fe7172b9d667e49844cb38f3be01db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempovida: 2.5

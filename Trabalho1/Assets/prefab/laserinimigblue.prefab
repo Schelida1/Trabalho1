@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 4987969653914290956}
   - component: {fileID: 4987969653914290959}
   - component: {fileID: 4987969653914290958}
+  - component: {fileID: 1215420059}
+  - component: {fileID: 8171827599097326133}
+  - component: {fileID: 7505559846581683638}
   m_Layer: 0
   m_Name: laserinimigblue
   m_TagString: Untagged
@@ -101,3 +104,50 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.034039848}
   m_Size: {x: 0.34603944, y: 0.5437763}
   m_Direction: 0
+--- !u!50 &1215420059
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4987969653914290945}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &8171827599097326133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4987969653914290945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b030157fd9be04ca7061affa216191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadelaser: 10
+--- !u!114 &7505559846581683638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4987969653914290945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79fe7172b9d667e49844cb38f3be01db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempovida: 2.5
