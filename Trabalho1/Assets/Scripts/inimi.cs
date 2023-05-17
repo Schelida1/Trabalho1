@@ -10,6 +10,8 @@ public class inimi : MonoBehaviour
     public float Velocidadedoinimigo;
 
     public float tempomaximo;
+    public int vidamax;
+    public int vidaatualinimig; 
 
     public float tempoatual;
     public bool inimigoAtirador;
@@ -44,6 +46,15 @@ public class inimi : MonoBehaviour
         {
             Instantiate(laserdoinimigo, localdedisparo.position, Quaternion.Euler(0f, 0f, 90f));
             tempoatual = tempomaximo;
+        }
+    }
+
+    public void Machuinimig(int danoreceber)
+    {
+        vidaatualinimig -= danoreceber;
+        if (vidaatualinimig <= 0 )
+        {
+            Destroy(this.gameObject);
         }
     }
 }
