@@ -4,6 +4,8 @@ using UnityEngine;
 public class tiropersona : MonoBehaviour
 {
     public float velocidadelaser;
+
+    public int danoparadar;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,13 @@ public class tiropersona : MonoBehaviour
     private void movimentlaser()
     {
         transform.Translate(Vector3.up * velocidadelaser * Time.deltaTime);
+    }
+    void Ontrigger2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Inimigo"))
+        {
+            other.gameObject.GetComponent<inimi>().Machuinimig(danoparadar);
+            Destroy(this.gameObject);
+        }
     }
 }

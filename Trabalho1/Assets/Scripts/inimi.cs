@@ -10,8 +10,9 @@ public class inimi : MonoBehaviour
     public float Velocidadedoinimigo;
 
     public float tempomaximo;
-    public int vidamax;
-    public int vidaatualinimig; 
+    public int vidamaxinimig;
+    public int vidaatualinimig;
+    public int pontosparadar;
 
     public float tempoatual;
     public bool inimigoAtirador;
@@ -19,7 +20,7 @@ public class inimi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        vidaatualinimig = vidamaxinimig;
     }
 
     // Update is called once per frame
@@ -54,6 +55,7 @@ public class inimi : MonoBehaviour
         vidaatualinimig -= danoreceber;
         if (vidaatualinimig <= 0 )
         {
+            GameManager.instance.Aumentarpont(pontosparadar);
             Destroy(this.gameObject);
         }
     }

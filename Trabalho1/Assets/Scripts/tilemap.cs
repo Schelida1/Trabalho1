@@ -16,11 +16,11 @@ public class tilemap : MonoBehaviour
     {
         
     }
-     private void OnCollisionEnter2D(Collider2D other) // diz qual o objeto que coliddiu e armazenar aqui
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            other.gameObject.GetComponent<vida>().machucarjog(danoparadar);
-        }
-    } 
+  //   private void OnCollisionEnter2D(Collider2D other) // diz qual o objeto que coliddiu e armazenar aqui
+   // {
+    //    if (other.gameObject.CompareTag("Player"))
+      //  {
+       //     other.gameObject.GetComponent<vida>().machucarjog(danoparadar);
+      //  }
+   // } 
 }

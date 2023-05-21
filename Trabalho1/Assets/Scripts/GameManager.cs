@@ -7,24 +7,26 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager instance;
+    public int pontosagr; 
 
 
-    private void Awake()
+    private void Awake() // primeiro metodo a ser rodado 
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(transform);
-        }
-        else 
-            Destroy(gameObject);
+        //if (Instance == null)
+        //{
+            instance = this;
+         //   DontDestroyOnLoad(transform);
+       // }
+        // else 
+          //  Destroy(gameObject);
     }
 
     // Start is called before the first frame update
     void Start()
-    { 
-        LoadScene("MainMenu"); // Assim que o jogo iniciar aparecerá a função Menu
+    {
+        pontosagr = 0;
+        //LoadScene("MainMenu"); // Assim que o jogo iniciar aparecerá a função Menu
     }
 
     // Update is called once per frame
@@ -32,8 +34,13 @@ public class GameManager : MonoBehaviour
     {  
     }
 
-   public void LoadScene(string sceneName)
-    {
-     SceneManager.LoadScene(sceneName); 
-    }
+   //public void LoadScene(string sceneName)
+    //{
+     //SceneManager.LoadScene(sceneName); 
+    //}
+
+   public void Aumentarpont(int ganharpont)
+   {
+       pontosagr += ganharpont;
+   }
 }
