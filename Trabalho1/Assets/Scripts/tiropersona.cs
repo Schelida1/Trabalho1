@@ -20,9 +20,9 @@ public class tiropersona : MonoBehaviour
 
     private void movimentlaser()
     {
-        transform.Translate(Vector3.up * velocidadelaser * Time.deltaTime);
+        transform.Translate(Vector3.right * velocidadelaser * Time.deltaTime);
     }
-    public void OntriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Inimigo"))
         {

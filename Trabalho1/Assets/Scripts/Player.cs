@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
         {
             if (doublaser == false)
             {
-                Instantiate(tiroperson, localdisparounic.position, localdisparounic.rotation);
+                Instantiate(tiroperson, localdisparounic.position, Quaternion.identity);
             }
         }
     }

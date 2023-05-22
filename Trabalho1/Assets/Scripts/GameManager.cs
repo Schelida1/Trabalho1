@@ -1,13 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public Text textodepontuacao;
     public int pontosagr; 
 
 
@@ -26,6 +29,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         pontosagr = 0;
+        textodepontuacao.text = "Pontuação: " + pontosagr;
         //LoadScene("MainMenu"); // Assim que o jogo iniciar aparecerá a função Menu
     }
 
@@ -42,5 +46,7 @@ public class GameManager : MonoBehaviour
    public void Aumentarpont(int ganharpont)
    {
        pontosagr += ganharpont;
+       textodepontuacao.text = "Pontuação: " + pontosagr;
+       
    }
 }
