@@ -24,26 +24,7 @@ public class laserinimi : MonoBehaviour
     {
         transform.Translate(Vector3.up * velocidadelaser * Time.deltaTime);
     }
-
-    void Ontrigger2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Inimigo"))
-        {
-            other.gameObject.GetComponent<vida>().machucarjog(danoparadar);
-        }
-    }
-   //private  void OnCollisionEnter2D(Collider2D other) // diz qual o objeto que coliddiu e armazenar aqui
-  //  {
-    ///    if (other.gameObject.CompareTag("Player"))
-     //   {
-     //       other.gameObject.GetComponent<vida>().machucarjog(danoparadar);
-            
-  //      }
- //   } 
-    
-    
-    
-    void OnTriggerEnter2D(Collider2D other) // diz qual o objeto que coliddiu e armazenar aqui
+    public void OnTriggerEnter2D(Collider2D other) // diz qual o objeto que coliddiu e armazenar aqui
     {
         if (other.gameObject.CompareTag("Player"))
         {
