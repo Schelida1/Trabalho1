@@ -32,4 +32,7 @@ public class laserinimi : MonoBehaviour
             Destroy(this.gameObject);
         }
     } 
+  
+
+
 }

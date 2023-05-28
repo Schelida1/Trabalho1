@@ -6,11 +6,14 @@ using UnityEngine.UI;
 
 public class vida : MonoBehaviour
 {
-    public int vidacoracao = 5 ;
-    public Slider barravidajog; 
+    public int vidacoracao = 5;
+    public Slider barravidajog;
+    public GameObject escudojogador; 
     public int vidamaxjogador;
 
     public int vidaatual;
+    public int vidamaxescudo;
+    public int vidaatualescudo; 
     public int damage;
 
     public bool temescudo;
@@ -31,6 +34,12 @@ public class vida : MonoBehaviour
         
     }
 
+    public void Ativarescudo()
+    {
+        escudojogador.SetActive(true);  // Ativar o escudo
+        temescudo = true; // ta dizendo que tem escudo e para ativar
+    }
+
     public void machucarjog(int danoreceber)
     {
         if (temescudo == false)
@@ -41,6 +50,15 @@ public class vida : MonoBehaviour
             {
                 Damage();
                 
+            }
+        }
+        else
+        {
+            vidaatualescudo -= danoreceber;
+            if (vidaatualescudo <=0 )
+            {
+                escudojogador.SetActive(false);
+                temescudo = false;
             }
         }
     }
@@ -60,6 +78,30 @@ public class vida : MonoBehaviour
             barravidajog.value = vidaatual;
         }
         
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Tilemap"))
+        {
+            PerderVidaCoracao();
+        }
+    }
+
+    void PerderVidaCoracao() // TIRAR VIDA DO JOGADOR TODA VEZ QUE ELE ENCOSTA NO TILEMAP
+    {
+        vidacoracao--;
+        GameController.instance.UpdateLives(vidacoracao);
+    
+        if (vidacoracao <= 0)
+        {
+            Debug.Log("Game Over");
+            
+        }
+        else
+        {
+            vidaatual = vidamaxjogador;
+            barravidajog.value = vidaatual;
+        }
     }
 
    

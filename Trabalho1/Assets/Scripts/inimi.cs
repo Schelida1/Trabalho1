@@ -45,7 +45,11 @@ public class inimi : MonoBehaviour
         tempoatual -= Time.deltaTime;
         if (tempoatual <= 0)
         {
-            Instantiate(laserdoinimigo, localdedisparo.position, Quaternion.Euler(0f, 0f, 90f));
+            Quaternion rotation60 = Quaternion.Euler(0f, 0f, 60f);
+            Quaternion rotation120 = Quaternion.Euler(0f, 0f, 120f);
+          //  Instantiate(laserdoinimigo, localdedisparo.position, Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(laserdoinimigo, localdedisparo.position, rotation60);
+            Instantiate(laserdoinimigo, localdedisparo.position, rotation120);
             tempoatual = tempomaximo;
         }
     }
