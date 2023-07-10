@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class navemae : MonoBehaviour
 {
-public float velomae;
+    public GameObject Lasermae;
+    public Transform LocaldeDiaparoo;
+    public float velomae;
+    public float tempomaxlaser;
+    public float tempoatuallaser;
+    
+
 // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +21,20 @@ public float velomae;
     void Update()
     {
         movimen();
+        Atirar();
     }
     private void movimen()
     {
-     transform.Translate(Vector3.down * velomae * Time.deltaTime);
+     transform.Translate(Vector3.up * velomae * Time.deltaTime);
+    }
+
+    private void Atirar()
+    {
+        tempoatuallaser -= Time.deltaTime;
+        if (tempoatuallaser <= 0)
+        {
+            Instantiate(Lasermae, LocaldeDiaparoo.position, Quaternion.Euler(0f,0f,0f));
+            tempoatuallaser = tempomaxlaser;
+        }
     }
 }
