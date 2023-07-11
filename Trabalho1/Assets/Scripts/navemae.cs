@@ -9,6 +9,10 @@ public class navemae : MonoBehaviour
     public float velomae;
     public float tempomaxlaser;
     public float tempoatuallaser;
+
+    // sistem de velocidade do laser
+    public float Velocidadelaser;
+    public int danoparadar;
     
 
 // Start is called before the first frame update
@@ -37,4 +41,16 @@ public class navemae : MonoBehaviour
             tempoatuallaser = tempomaxlaser;
         }
     }
+   private void MovimentarLaser()
+   {
+            transform.Translate(Vector3.up * Velocidadelaser * Time.deltaTime);
+   }
+   public void OnTriggerEnter2D(Collider2D other) // diz qual o objeto que coliddiu e armazenar aqui
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<vida>().machucarjog(danoparadar);
+            Destroy(this.gameObject);
+        }
+    } 
 }

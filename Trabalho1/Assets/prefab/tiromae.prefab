@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2564523363411512761}
   - component: {fileID: 2564523363411512760}
   - component: {fileID: 2564523363411512762}
+  - component: {fileID: 4592321970434289423}
   m_Layer: 0
   m_Name: tiromae
   m_TagString: Untagged
@@ -101,3 +102,22 @@ CircleCollider2D:
   m_Offset: {x: 0.0035682619, y: 0}
   serializedVersion: 2
   m_Radius: 0.23152182
+--- !u!114 &4592321970434289423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2564523363411512767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa6dd498b2da9c408e85f02938fb4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lasermae: {fileID: 0}
+  LocaldeDiaparoo: {fileID: 0}
+  velomae: 0
+  tempomaxlaser: 0
+  tempoatuallaser: 0
+  Velocidadelaser: 0
+  danoparadar: 0
