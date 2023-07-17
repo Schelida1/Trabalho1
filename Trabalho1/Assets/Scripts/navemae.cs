@@ -5,20 +5,24 @@ using UnityEngine;
 public class navemae : MonoBehaviour
 {
     public GameObject Lasermae;
-    public Transform LocaldeDiaparoo;
+    public Transform localdeDisparoo;
+    
     public float velomae;
     public float tempomaxlaser;
     public float tempoatuallaser;
 
     // sistem de velocidade do laser
-    public float Velocidadelaser;
+    public int vidamaxinimigo;
+    public int vidaatualinimig;
+    
     public int danoparadar;
+    public int pontosparadar;
     
 
 // Start is called before the first frame update
     void Start()
     {
-        
+        vidaatualinimig = vidamaxinimigo;
     }
 
     // Update is called once per frame
@@ -37,20 +41,20 @@ public class navemae : MonoBehaviour
         tempoatuallaser -= Time.deltaTime;
         if (tempoatuallaser <= 0)
         {
-            Instantiate(Lasermae, LocaldeDiaparoo.position, Quaternion.Euler(0f,0f,0f));
+            float angulo = Random.Range(-90f, 90f);
+            Instantiate(Lasermae, localdeDisparoo.position, Quaternion.Euler(0f,0f,angulo + 90));
             tempoatuallaser = tempomaxlaser;
         }
     }
-   private void MovimentarLaser()
-   {
-            transform.Translate(Vector3.up * Velocidadelaser * Time.deltaTime);
-   }
-   public void OnTriggerEnter2D(Collider2D other) // diz qual o objeto que coliddiu e armazenar aqui
+    public void Machuinimig(int danoreceber)
     {
-        if (other.gameObject.CompareTag("Player"))
+        vidaatualinimig -= danoreceber;
+        if (vidaatualinimig <= 0 )
         {
-            other.gameObject.GetComponent<vida>().machucarjog(danoparadar);
+            GameManager.instance.Aumentarpont(pontosparadar);
             Destroy(this.gameObject);
         }
-    } 
+    }
+   
+   
 }

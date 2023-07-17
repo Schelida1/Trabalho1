@@ -16,7 +16,6 @@ public class inimi : MonoBehaviour
 
     public float tempoatual;
     public bool inimigoAtirador;
-    
     // Start is called before the first frame update
     void Start()
     {

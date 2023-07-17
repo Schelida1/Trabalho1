@@ -29,5 +29,11 @@ public class tiropersona : MonoBehaviour
             other.gameObject.GetComponent<inimi>().Machuinimig(danoparadar);
             Destroy(this.gameObject);
         }
+        
+        if (other.gameObject.CompareTag("navemae"))
+        {
+            other.gameObject.GetComponent<navemae>().Machuinimig(danoparadar);
+            Destroy(this.gameObject);
+        }
     }
 }
