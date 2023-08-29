@@ -885,7 +885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lasermae: {fileID: 59470027}
   localdeDisparoo: {fileID: 959670245}
-  velomae: 5
+  velomae: 0
   tempomaxlaser: 0.5
   tempoatuallaser: 0
   vidamaxinimigo: 10
