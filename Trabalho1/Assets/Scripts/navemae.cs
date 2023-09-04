@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class navemae : MonoBehaviour
 {
+    public 
     public GameObject Lasermae;
     public Transform localdeDisparoo;
     
@@ -21,8 +22,8 @@ public class navemae : MonoBehaviour
     public bool Temescudoo;
     void Start()
     {
-       
-        
+        vidaatualinimig = vidamaxinimigo;
+
     }
     
 
@@ -43,12 +44,14 @@ public class navemae : MonoBehaviour
         if (tempoatuallaser <= 0)
         {
             float angulo = Random.Range(-90f, 90f);
-            Instantiate(Lasermae, localdeDisparoo.position, Quaternion.Euler(0f,0f,angulo + 90));
-            tempoatuallaser = tempomaxlaser;
+                Instantiate(Lasermae, localdeDisparoo.position, Quaternion.Euler(0f,0f,angulo + 90));
+                tempoatuallaser = tempomaxlaser;
+
         }
     }
 
     public void Machuinimig(int danoreceber)
+    
     {
         vidaatualinimig -= danoreceber;
         if (vidaatualinimig <= 0)
@@ -56,5 +59,6 @@ public class navemae : MonoBehaviour
             GameManager.instance.Aumentarpont(pontosparadar);
             Destroy(this.gameObject);
         }
+        
     }
 }
