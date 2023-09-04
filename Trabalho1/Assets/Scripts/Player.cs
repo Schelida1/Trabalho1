@@ -8,9 +8,14 @@ public class Player : MonoBehaviour
     public Rigidbody2D rig;
     public GameObject tiroperson;
     public Transform localdisparounic;
+    public Transform localdisparoEsquerda;
+    public Transform localdisparoDireita;
 
-    public GameObject weapons;
-    private int currentWeaponIndex = 0; 
+    public float Tempomaxlaserduplo;
+    public float Tempoatuallaserduplo;
+
+
+     
     
     public float velonave; // Essa variavel diz qual a velocidade da nave
     public bool doublaser;
@@ -19,6 +24,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         doublaser = false;
+        Tempoatuallaserduplo = Tempomaxlaserduplo;
     }
 
     // Update é uma vez por freime 
@@ -27,12 +33,18 @@ public class Player : MonoBehaviour
         movplayer();
         Atirar();
         
-    }
-    if(Input.GetKeyDown(KeyCode.Tab))
-    {
-        weapons[currentWeaponIndex].SetActive(false);
-        currentWeaponIndex++;
-        if(currentWeapon)
+        if(doublaser == true)
+        {
+             Tempoatuallaserduplo  -=  Time.deltaTime;
+
+             if(Tempoatuallaserduplo <= 0)
+             {
+                  Desativadoublaser();
+             }
+        }
+
+
+       
     }
 
 
@@ -50,6 +62,18 @@ public class Player : MonoBehaviour
             {
                 Instantiate(tiroperson, localdisparounic.position, Quaternion.identity);
             }
+            else 
+            {
+                Instantiate(tiroperson, localdisparoEsquerda.position, Quaternion.identity);
+                Instantiate(tiroperson, localdisparoDireita.position, Quaternion.identity);
+            }
+
         }
+    }
+
+    private void Desativadoublaser()
+    {
+      doublaser = false; 
+      Tempoatuallaserduplo = Tempomaxlaserduplo;
     }
 }

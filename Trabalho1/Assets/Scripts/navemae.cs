@@ -17,13 +17,14 @@ public class navemae : MonoBehaviour
     
     public int danoparadar;
     public int pontosparadar;
-    
-
-// Start is called before the first frame update
+    public GameObject escudo;
+    public bool Temescudoo;
     void Start()
     {
-        vidaatualinimig = vidamaxinimigo;
+       
+        
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -33,7 +34,7 @@ public class navemae : MonoBehaviour
     }
     private void movimen()
     {
-     transform.Translate(Vector3.up * velomae * Time.deltaTime);
+        transform.Translate(Vector3.up * velomae * Time.deltaTime);
     }
 
     private void Atirar()
@@ -46,15 +47,14 @@ public class navemae : MonoBehaviour
             tempoatuallaser = tempomaxlaser;
         }
     }
+
     public void Machuinimig(int danoreceber)
     {
         vidaatualinimig -= danoreceber;
-        if (vidaatualinimig <= 0 )
+        if (vidaatualinimig <= 0)
         {
             GameManager.instance.Aumentarpont(pontosparadar);
             Destroy(this.gameObject);
         }
     }
-   
-   
 }

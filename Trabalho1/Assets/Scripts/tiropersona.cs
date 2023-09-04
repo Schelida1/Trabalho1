@@ -31,9 +31,9 @@ public class tiropersona : MonoBehaviour
         }
         
         if (other.gameObject.CompareTag("navemae"))
-        {
+       {
             other.gameObject.GetComponent<navemae>().Machuinimig(danoparadar);
             Destroy(this.gameObject);
-        }
+       }
     }
 }

@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class vida : MonoBehaviour
 {
     public int vidacoracao = 5;
@@ -17,30 +15,45 @@ public class vida : MonoBehaviour
     public int damage;
 
     public bool temescudo;
-    
     // Start is called before the first frame update
     void Start()
     {
         vidaatual = vidamaxjogador;
+        vidaatualescudo = vidamaxescudo;
         barravidajog.maxValue = vidamaxjogador; // sempre que iniciar o jogo a vida máxima da barra vai ser igual a vida do jogador
         barravidajog.value = vidaatual;// pra come
+        
         escudojogador.SetActive(false);
         temescudo = false;
         GameController.instance.UpdateLives(vidacoracao);
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+     
         
     }
-
+     
     public void Ativarescudo()
     {
         vidaatualescudo = vidamaxescudo;
         escudojogador.SetActive(true);  // Ativar o escudo
         temescudo = true; // ta dizendo que tem escudo e para ativar
+    }
+
+    public void GanharVidas(int Vidaparareceber)
+    {
+        if (vidaatual + Vidaparareceber <= vidamaxjogador)
+        {
+            vidaatual += Vidaparareceber;
+        }
+        else
+        {
+            vidaatual = vidamaxjogador;
+        }
+
+        barravidajog.value = vidaatual;
     }
 
     public void machucarjog(int danoreceber) // desconto vida da barra do jogador 
@@ -106,6 +119,4 @@ public class vida : MonoBehaviour
             barravidajog.value = vidaatual;
         }
     }
-
-   
 }
