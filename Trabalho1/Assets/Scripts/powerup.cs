@@ -20,12 +20,12 @@ public class powerup : MonoBehaviour
                 other.gameObject.GetComponent<vida>().Ativarescudo();
             }
 
-            if (itemdoublaser == true)
-            {
-                other.gameObject.GetComponent<Player>().doublaser = false;
-                other.gameObject.GetComponent<Player>().Tempoatuallaserduplo = other.gameObject.GetComponent<Player>().Tempomaxlaserduplo ;
-                other.gameObject.GetComponent<Player>().doublaser = true;
-            }
+            //if (itemdoublaser == true)
+           // {
+               // other.gameObject.GetComponent<Player>().doublaser = false;
+               // other.gameObject.GetComponent<Player>().Tempoatuallaserduplo = other.gameObject.GetComponent<Player>().Tempomaxlaserduplo ;
+               // other.gameObject.GetComponent<Player>().doublaser = true;
+            //}
 
             if (itemvida == true)
             {

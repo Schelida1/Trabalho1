@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class navemae : MonoBehaviour
 {
-    public 
+
+    public Slider barramae;
     public GameObject Lasermae;
     public Transform localdeDisparoo;
     
@@ -20,9 +22,26 @@ public class navemae : MonoBehaviour
     public int pontosparadar;
     public GameObject escudo;
     public bool Temescudoo;
+    public int vidamaxescudo;
+    public int vidaatualescudo;
     void Start()
     {
         vidaatualinimig = vidamaxinimigo;
+        barramae.maxValue = vidamaxinimigo;
+        barramae.value = vidaatualinimig;
+
+        escudo.SetActive(true);
+        Temescudoo = true;
+        AtivarEscudo();
+        
+
+    }
+    public void AtivarEscudo()
+    {
+        vidaatualescudo = vidamaxescudo;
+
+        escudo.SetActive(true);
+        Temescudoo = true;
 
     }
     
@@ -52,13 +71,31 @@ public class navemae : MonoBehaviour
 
     public void Machuinimig(int danoreceber)
     
-    {
-        vidaatualinimig -= danoreceber;
-        if (vidaatualinimig <= 0)
-        {
-            GameManager.instance.Aumentarpont(pontosparadar);
-            Destroy(this.gameObject);
-        }
+    {   if(Temescudoo == false)
+          {
+               vidaatualinimig -= danoreceber;
+               barramae.value = vidaatualinimig;
+
+               if (vidaatualinimig <= 0)
+                  {
+                       GameManager.instance.Aumentarpont(pontosparadar);
+                       Destroy(this.gameObject);
+                  }
+
+          }
+         else
+         {
+               vidaatualescudo -= danoreceber;
+               if( vidaatualescudo <= 0 )
+                  {
+                       escudo.SetActive(false);
+                       Temescudoo = false;
+                  }
+
+
+         }
+
+      
         
     }
 }
