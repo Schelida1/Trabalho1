@@ -1550,6 +1550,8 @@ MonoBehaviour:
   localdisparounic: {fileID: 998388801}
   localdisparoEsquerda: {fileID: 2143506595}
   localdisparoDireita: {fileID: 214502710}
+  Tempomaxlaserduplo: 0
+  Tempoatuallaserduplo: 0
   velonave: 10
   doublaser: 1
 --- !u!114 &687191098
@@ -2069,6 +2071,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textodepontuacao: {fileID: 314621152}
   pontosagr: 0
+--- !u!1 &902769246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 902769248}
+  - component: {fileID: 902769247}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &902769247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902769246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de4ec51d89047e43bff4c2dd16d0367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &902769248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902769246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 420.60327, y: 332.78296, z: -5.0110292}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &949317167
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
     public Transform localdisparoEsquerda;
     public Transform localdisparoDireita;
 
-    //public float Tempomaxlaserduplo;
-  //  public float Tempoatuallaserduplo;
+    public float Tempomaxlaserduplo;
+    public float Tempoatuallaserduplo;
 
 
      
@@ -23,8 +23,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      //  doublaser = false;
-      //  Tempoatuallaserduplo = Tempomaxlaserduplo;
+        doublaser = false; 
+        Tempoatuallaserduplo = Tempomaxlaserduplo;
     }
 
     // Update é uma vez por freime 
@@ -33,15 +33,15 @@ public class Player : MonoBehaviour
         movplayer();
         Atirar();
         
-       // if(doublaser == true)
-       // {
-        //     Tempoatuallaserduplo  -=  Time.deltaTime;
+        if(doublaser == true)
+        {
+             Tempoatuallaserduplo  -=  Time.deltaTime;
 
-         //    if(Tempoatuallaserduplo <= 0)
-         //   {
-                 // Desativadoublaser();
-          //   }
-        //}
+             if(Tempoatuallaserduplo <= 0)
+            {
+                  Desativadoublaser();
+             }
+        }
 
 
        
@@ -71,9 +71,9 @@ public class Player : MonoBehaviour
         }
     }
 
-   // private void Desativadoublaser()
-    //{
-    //  doublaser = false; 
-    //  Tempoatuallaserduplo = Tempomaxlaserduplo;
-   // }
+    private void Desativadoublaser()
+    {
+      doublaser = false; 
+      Tempoatuallaserduplo = Tempomaxlaserduplo;
+    }
 }
