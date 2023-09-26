@@ -169,3 +169,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textodepontuacao: {fileID: 0}
   pontosagr: 0
+  QUEBRA: {fileID: 6846136828539802154, guid: 2f1444da63e4e3d4b85d415aa00d1b57, type: 3}

@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     public float Tempomaxlaserduplo;
     public float Tempoatuallaserduplo;
+    
+    
 
 
      

@@ -5,8 +5,7 @@ using UnityEngine.UI;
 public class vida : MonoBehaviour
 {
     public int vidacoracao = 5;
-    public Slider barravidajog;// declaro a variavel como slide e preciso mudar o unityengine.ui
-    public GameObject escudojogador; 
+     GameObject escudojogador; 
     public int vidamaxjogador;
 
     public int vidaatual;
@@ -20,8 +19,8 @@ public class vida : MonoBehaviour
     {
         vidaatual = vidamaxjogador;
         vidaatualescudo = vidamaxescudo;
-        barravidajog.maxValue = vidamaxjogador; // sempre que iniciar o jogo a vida máxima da barra vai ser igual a vida do jogador
-        barravidajog.value = vidaatual;// pra come
+      //  barravidajog.maxValue = vidamaxjogador; // sempre que iniciar o jogo a vida máxima da barra vai ser igual a vida do jogador
+      ///  barravidajog.value = vidaatual;// pra come
         
         escudojogador.SetActive(false);
         temescudo = false;
@@ -53,7 +52,7 @@ public class vida : MonoBehaviour
             vidaatual = vidamaxjogador;
         }
 
-        barravidajog.value = vidaatual;
+       // barravidajog.value = vidaatual;
     }
 
     public void machucarjog(int danoreceber) // desconto vida da barra do jogador 
@@ -61,7 +60,7 @@ public class vida : MonoBehaviour
         if (temescudo == false)
         {
             vidaatual -= danoreceber;
-            barravidajog.value = vidaatual; // aqui ele está acessando o valor representado no barra de vida de value, em questão do preenchimento
+          //  barravidajog.value = vidaatual; // aqui ele está acessando o valor representado no barra de vida de value, em questão do preenchimento
             if (vidaatual<= 0)
             {
                 Damage();
@@ -91,7 +90,7 @@ public class vida : MonoBehaviour
         else
         {
             vidaatual = vidamaxjogador;
-            barravidajog.value = vidaatual;
+        //    barravidajog.value = vidaatual;
         }
         
     }
@@ -116,7 +115,7 @@ public class vida : MonoBehaviour
         else
         {
             vidaatual = vidamaxjogador;
-            barravidajog.value = vidaatual;
+     //       barravidajog.value = vidaatual;
         }
     }
 }

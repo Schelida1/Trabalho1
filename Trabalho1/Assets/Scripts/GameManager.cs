@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public Text textodepontuacao;
     public int pontosagr;
+    public GameObject QUEBRA; 
 
 
     //private void OnDisable()
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
 
     // Start is called before the first frame update
@@ -39,7 +41,29 @@ public class GameManager : MonoBehaviour
         //textodepontuacao.text = "Pontuação: " + pontosagr;
         //LoadScene("MainMenu"); // Assim que o jogo iniciar aparecerá a função Menu
         SceneManager.LoadScene( "MainMenu");
+       //SceneManager.LoadSceneAsync("MainMenu").completed += OnMainMenuLoaded;
     }
+
+    private void OnMainMenuLoaded(AsyncOperation operation)
+    {
+        // Verifique se o prefab do jogador está configurado.
+        if (QUEBRA != null)
+        {
+            //  instanciar o jogador.
+            Transform spawnPoint = GameObject.Find("PlayerSpawnPoint").transform;
+
+            // Instancie o jogador no ponto desejado.
+            Instantiate(QUEBRA, spawnPoint.position, spawnPoint.rotation);
+        }
+        else
+        {
+            Debug.LogError("Prefab do jogador não configurado no GameManager!");
+        }
+    }
+    
+
+    
+        
 
     // Update is called once per frame
     void Update()
@@ -65,7 +89,14 @@ public class GameManager : MonoBehaviour
 
    public void LoadLevel( )
    {
-       SceneManager.LoadScene("Level1");
-       SceneManager.LoadScene("GUI", LoadSceneMode.Additive);
+       SceneManager.LoadScene("GUI");
+    //   SceneManager.LoadScene("Level1", LoadSceneMode.Additive);
+       SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive).completed += OnMainMenuLoaded;
+       // SceneManager.LoadSceneAsync("MainMenu").completed += OnMainMenuLoaded;
+       {
+        
+           Vector3 Bola =GameObject.FindWithTag("InstancePlayer").transform.position;
+           Instantiate (QUEBRA, Bola, Quaternion.identity);
+       };
    }
 }
