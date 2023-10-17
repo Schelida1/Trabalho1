@@ -496,6 +496,7 @@ GameObject:
   - component: {fileID: 314621154}
   - component: {fileID: 314621152}
   - component: {fileID: 314621153}
+  - component: {fileID: 314621156}
   m_Layer: 5
   m_Name: textopontuacaoatual
   m_TagString: Untagged
@@ -580,6 +581,19 @@ RectTransform:
   m_AnchoredPosition: {x: -273.441, y: -24.056519}
   m_SizeDelta: {x: 546.881, y: 48.113}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &314621156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314621151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1fc588ea0c80f34b9525fe204dc54fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textodepontuacao: {fileID: 314621152}
 --- !u!1 &507262820
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 701487490}
   - component: {fileID: 701487491}
+  - component: {fileID: 701487492}
   m_Layer: 5
   m_Name: Barra de vida do jogador
   m_TagString: Untagged
@@ -701,12 +716,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &701487492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701487489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e693d16869ac4a408f35529abceba9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &751917268
 GameObject:
   m_ObjectHideFlags: 0

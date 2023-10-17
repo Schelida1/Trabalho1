@@ -25,7 +25,8 @@ public class GameController : MonoBehaviour
 
     public void UpdateLives(int value)
     {
-         HeathText.text ="x " + value.ToString();
+//         HeathText.text ="x " + value.ToString();
+         
     }
 
     public void RestartGame()

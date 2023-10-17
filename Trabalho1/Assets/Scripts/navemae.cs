@@ -26,9 +26,9 @@ public class navemae : MonoBehaviour
     public int vidaatualescudo;
     void Start()
     {
-        vidaatualinimig = vidamaxinimigo;
-        barramae.maxValue = vidamaxinimigo;
-        barramae.value = vidaatualinimig;
+       // vidaatualinimig = vidamaxinimigo;
+      //  barramae.maxValue = vidamaxinimigo;
+      //  barramae.value = vidaatualinimig;
 
         escudo.SetActive(true);
         Temescudoo = true;

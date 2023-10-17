@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -13,7 +14,10 @@ public class Player : MonoBehaviour
 
     public float Tempomaxlaserduplo;
     public float Tempoatuallaserduplo;
-    
+
+    private int points;
+    private int currenEnergy;
+    [SerializeField] private int MaxEnergy;
     
 
 
@@ -77,5 +81,24 @@ public class Player : MonoBehaviour
     {
       doublaser = false; 
       Tempoatuallaserduplo = Tempomaxlaserduplo;
+    }
+
+    private void Addpoints(int amount)
+    {
+        
+        points = Mathf.Clamp(points + amount, 0, int.MaxValue);
+        PlayerObserver.PointsChanged(points);
+        
+        
+    }
+
+    private void AddEnergy(int amount)
+    {
+        
+        currenEnergy = Mathf.Clamp(currenEnergy + amount, 0, MaxEnergy);
+        PlayerObserver.EnergyChanged((int)currenEnergy/MaxEnergy);
+
+
+
     }
 }

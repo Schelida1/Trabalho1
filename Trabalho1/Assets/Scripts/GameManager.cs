@@ -37,8 +37,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //pontosagr = 0;
-        //textodepontuacao.text = "Pontuação: " + pontosagr;
+    //    pontosagr = 0;
+//        textodepontuacao.text = "Pontuação: " + pontosagr;
         //LoadScene("MainMenu"); // Assim que o jogo iniciar aparecerá a função Menu
         SceneManager.LoadScene( "MainMenu");
        //SceneManager.LoadSceneAsync("MainMenu").completed += OnMainMenuLoaded;
@@ -83,20 +83,15 @@ public class GameManager : MonoBehaviour
    public void Aumentarpont(int ganharpont)
    {
        pontosagr += ganharpont;
-       textodepontuacao.text = "Pontuação: " + pontosagr;
-       
+      // textodepontuacao.text = "Pontuação: " + pontosagr;
+      PlayerObserver.OnPointsChanged(pontosagr);
+
    }
 
    public void LoadLevel( )
    {
        SceneManager.LoadScene("GUI");
-    //   SceneManager.LoadScene("Level1", LoadSceneMode.Additive);
        SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive).completed += OnMainMenuLoaded;
-       // SceneManager.LoadSceneAsync("MainMenu").completed += OnMainMenuLoaded;
-       {
-        
-           Vector3 Bola =GameObject.FindWithTag("InstancePlayer").transform.position;
-           Instantiate (QUEBRA, Bola, Quaternion.identity);
-       };
+       
    }
 }

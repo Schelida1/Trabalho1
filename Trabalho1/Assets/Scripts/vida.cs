@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class vida : MonoBehaviour
 {
     public int vidacoracao = 5;
-     GameObject escudojogador; 
+    public GameObject escudojogador; 
     public int vidamaxjogador;
 
     public int vidaatual;
@@ -46,10 +46,12 @@ public class vida : MonoBehaviour
         if (vidaatual + Vidaparareceber <= vidamaxjogador)
         {
             vidaatual += Vidaparareceber;
+            PlayerObserver.OnEnergyChanged(vidaatual);
         }
         else
         {
             vidaatual = vidamaxjogador;
+            PlayerObserver.OnEnergyChanged(vidaatual);
         }
 
        // barravidajog.value = vidaatual;
@@ -60,6 +62,7 @@ public class vida : MonoBehaviour
         if (temescudo == false)
         {
             vidaatual -= danoreceber;
+            PlayerObserver.OnEnergyChanged(vidaatual);
           //  barravidajog.value = vidaatual; // aqui ele está acessando o valor representado no barra de vida de value, em questão do preenchimento
             if (vidaatual<= 0)
             {
@@ -72,8 +75,9 @@ public class vida : MonoBehaviour
             vidaatualescudo -= danoreceber;
             if (vidaatualescudo <=0 )
             {
-                escudojogador.SetActive(false);
+//                escudojogador.SetActive(false);
                 temescudo = false;
+                PlayerObserver.OnEnergyChanged(vidaatual);
             }
         }
     }
@@ -82,15 +86,19 @@ public class vida : MonoBehaviour
     {
         vidacoracao -= 1 ;
         GameController.instance.UpdateLives(vidacoracao); // atualiza a vida 
+        PlayerObserver.OnEnergyChanged(vidaatual);
         if (vidacoracao <= 0 )
+           
            
         {
             Debug.Log("Game Over");
+            PlayerObserver.OnEnergyChanged(vidaatual);
         }
         else
         {
             vidaatual = vidamaxjogador;
         //    barravidajog.value = vidaatual;
+              PlayerObserver.OnEnergyChanged(vidaatual);
         }
         
     }
@@ -99,6 +107,7 @@ public class vida : MonoBehaviour
         if (collision.gameObject.CompareTag("Tilemap"))
         {
             PerderVidaCoracao();
+            PlayerObserver.OnEnergyChanged(vidaatual);
         }
     }
 
@@ -110,12 +119,14 @@ public class vida : MonoBehaviour
         if (vidacoracao <= 0)
         {
             Debug.Log("Game Over");
+            PlayerObserver.OnEnergyChanged(vidaatual);
             
         }
         else
         {
             vidaatual = vidamaxjogador;
      //       barravidajog.value = vidaatual;
+            PlayerObserver.OnEnergyChanged(vidaatual);
         }
     }
 }
